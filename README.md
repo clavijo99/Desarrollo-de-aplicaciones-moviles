@@ -1,6 +1,3 @@
-
-
-````markdown
 # 📱 Clase de Aplicaciones Móviles con Flutter
 
 Este repositorio contiene el material trabajado en la clase de **Aplicaciones Móviles con Flutter**, incluyendo ejemplos prácticos, ejercicios, y conceptos fundamentales del desarrollo móvil utilizando **Dart** y **Flutter**.
@@ -15,8 +12,10 @@ En este repositorio encontrarás:
   - Listas y mapas  
   - Condicionales y bucles  
   - Funciones y clases  
+
 - **Ejercicios prácticos**  
   - Archivos `.dart` con ejemplos comentados
+
 - **Proyectos y ejemplos con Flutter** *(a medida que avancemos en clase)*
 
 ## 🛠 Tecnologías utilizadas
@@ -31,41 +30,39 @@ En este repositorio encontrarás:
    ```bash
    git clone https://github.com/usuario/nombre-repo.git
    cd nombre-repo
-````
+   ```
 
-2. **Ejecutar un archivo `.dart`**
+2. **Ejecutar un archivo `.dart`**  
    Asegúrate de tener Dart instalado:
-
    ```bash
    dart run conceptos_basicos.dart
    ```
 
-3. **Ejecutar proyectos Flutter**
+3. **Ejecutar proyectos Flutter**  
    Entra en la carpeta del proyecto y ejecuta:
-
    ```bash
    flutter run
    ```
 
 ## 📌 Notas de la clase
 
-* El código está comentado línea por línea para facilitar el aprendizaje.
-* A medida que avancemos, se irán subiendo nuevos ejemplos y proyectos.
-* Se recomienda seguir el orden de los ejemplos para comprender mejor los conceptos.
+- El código está comentado línea por línea para facilitar el aprendizaje.
+- A medida que avancemos, se irán subiendo nuevos ejemplos y proyectos.
+- Se recomienda seguir el orden de los ejemplos para comprender mejor los conceptos.
 
 ## 📅 Avances por clase
 
 | Clase | Tema                      | Archivo                  |
-| ----- | ------------------------- | ------------------------ |
+|-------|---------------------------|--------------------------|
 | 1     | Conceptos básicos de Dart | `conceptos_basicos.dart` |
 | 2     | Introducción a Flutter    | *(pendiente)*            |
 
 ## 👨‍🏫 Profesor
 
-* **Nombre:** \[Brayan Camilo Clavijo Gomez]
-* **Contacto:** \[bclavijogomez@gmail.com]
+- **Nombre:** Brayan Camilo Clavijo Gómez
+- **Contacto:** bclavijogomez@gmail.com
 
 ## 📄 Licencia
 
-Este proyecto es de uso educativo.
+Este proyecto es de uso educativo.  
 Puedes usar y modificar el código libremente para fines de aprendizaje.
