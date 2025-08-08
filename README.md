@@ -28,7 +28,7 @@ En este repositorio encontrarás:
 
 1. **Clonar el repositorio**  
    ```bash
-   git clone [https://github.com/usuario/nombre-repo.git](https://github.com/clavijo99/Desarrollo-de-aplicaciones-moviles.git)
+   git clone https://github.com/clavijo99/Desarrollo-de-aplicaciones-moviles.git
    cd Desarrollo-de-aplicaciones-moviles
    ```
 
