@@ -74,17 +74,86 @@ void main() { // Función principal donde inicia la ejecución del programa
 
   1 > 2 ? print("es mayor") : print("no es mayor"); // Operador ternario: evalúa si 1 > 2
 
+
   // 7. BUCLES
-  // for -> Recorre un rango definido
-  // for-in -> Recorre los elementos de una lista
-  // while -> Se ejecuta mientras una condición sea verdadera
+
+  // for
+  for (int i = 0; i < nombres.length; i++) {
+    print(nombres[i]);
+  }
+
+  // for-in
+  for (String n in nombres) {
+    print(n);
+  }
+
+  // while
+  int counter = 0;
+
+  while (counter < 10) {
+    print(counter);
+    counter++;
+  }
 
   // 8. FUNCIONES
-  // Función flecha (lambda) -> Sintaxis corta para funciones simples
+
+  // void , int , String , double , bool
+  void sumar(int n1, int n2) {
+    print('la suma es: ${n1 + n2}');
+  }
+
+  sumar(1, 2);
+
+  int restar(int n1, int n2) {
+    return n1 - n2;
+  }
+
+  int resultado = restar(10, 5);
+
+  print('la resta es: ${resultado}');
+
+  // Función flecha (lambda)
+
+  double n(int n1, int n2) => n1 / n2;
 
   // 9. VARIABLES NULLABLES Y OPERADOR ??
-  // El operador ?? devuelve un valor por defecto si la variable es null
+
+  String? nombre = 'juan';
+
+  if (nombre != null) {
+    print(nombre);
+  } else {
+    print("La variable aun no se ha asignado");
+  }
+
+  int n1 = 1;
+  int? n2;
+
+  if (n2 != null) {
+    print(n1 + n2);
+  } else {
+    int n2Validate = n2 ?? 12;
+  }
 
   // 10. CREACIÓN DE CLASES
-  // Las clases permiten definir estructuras de datos con propiedades y métodos
+
+  final miClase = Persona('Ana', 'Perez');
+}
+
+// creacion de una clase en dart
+class Persona {
+  // definicion de atributos nullos ( ? )
+  String? name;
+  String? apellido;
+
+  // creacion del constructor
+  //cuando definimos loa atributos dentro del [] son atributos opcionales no nombrados
+  Persona([String? nombre, String? apellido]);
+}
+
+// creacion de una clase con atributos requeridos
+class Estudiante {
+  final String nombre;
+
+  Estudiante({required this.nombre});
 }
