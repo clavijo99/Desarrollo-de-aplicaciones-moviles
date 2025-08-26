@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
           "Aprendiendo flutter",
           style: TextStyle(
             color: Colors.white, // Texto blanco
-            fontSize: 20,        // Tamaño de texto
+            fontSize: 20, // Tamaño de texto
             fontWeight: FontWeight.bold, // Negrita
           ),
         ),
@@ -63,7 +63,10 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(height: 200, color: Colors.pink), // Bloque rosa
-            Expanded(flex: 3, child: Container(color: Colors.blue)), // Bloque azul
+            Expanded(
+              flex: 3,
+              child: Container(color: Colors.blue),
+            ), // Bloque azul
             Expanded(
               flex: 5,
               child: Container(
@@ -126,6 +129,29 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
+          BottomNavigationBarItem(icon: Icon(Icons.phone), label: 'Contact'),
+
+        ],
+        // color al item selecionado
+        selectedItemColor: Colors.blue,
+        // color a los items sin selecionar
+        unselectedItemColor: Colors.black,
+        unselectedLabelStyle: TextStyle(
+          color: Colors.black
+        ),
+        // color del texto selecionado
+        selectedLabelStyle: TextStyle(
+          color: Colors.blue,
+        ),
+        // repartir el espacio en candidades iguales
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
