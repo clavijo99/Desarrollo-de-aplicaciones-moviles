@@ -32,11 +32,12 @@ class _ButtonCustomState extends State<ButtonCustom> {
               spreadRadius: 2,
             ),
           ],
-          gradient: LinearGradient(
+         /* gradient: LinearGradient(
             colors: [Colors.green, Colors.pink, Colors.yellow],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-          ),
+          ),*/
+          border: Border.all(color: Colors.red, width: 0.5)
         ),
         child: Text(widget.text),
       ),
