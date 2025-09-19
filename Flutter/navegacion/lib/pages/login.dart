@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:navegacion/pages/layout.dart';
 import 'package:navegacion/pages/register.dart';
+import 'package:navegacion/providers/login_provider.dart';
 import 'package:navegacion/widgets/buttonCustom.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  const LoginScreen._();
+
+  static Widget init(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (_) => LoginProvider(),
+      builder: (_, __) => LoginScreen._(),
+    );
+  }
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -15,6 +24,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    final loginProvider = Provider.of<LoginProvider>(context);
+
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -22,6 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text('Login'),
+            Text(loginProvider.nombre),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: TextField(
@@ -50,7 +64,33 @@ class _LoginScreenState extends State<LoginScreen> {
                 onChanged: (value) {
                   print(value);
                 },
-                controller: email,
+                controller: loginProvider.email,
+              ),
+            ),
+
+            Container(
+              height: 80,
+              width: double.infinity,
+              decoration: BoxDecoration(color: Colors.grey[400]),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: Text('Contraseña'),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(border: Border.all()),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: '********',
+                        border: InputBorder.none,
+                      ),
+                      controller: loginProvider.password,
+                    ),
+                  ),
+                ],
               ),
             ),
             ButtonCustom(
@@ -82,6 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 // ).push(MaterialPageRoute(builder: (_) => LayoutScreen()));
 
                 print(email.text);
+                loginProvider.actualizar();
               },
             ),
           ],

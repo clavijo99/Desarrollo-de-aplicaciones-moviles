@@ -21,7 +21,7 @@ class MainApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
          '/': (context) => SplashScreen(),
-         '/login-screen': (context) => LoginScreen(),
+         '/login-screen': (context) => LoginScreen.init(context),
          '/register-screen': (context) => RegisterScreen(),
          '/layout-screen': (context) => LayoutScreen()
         // ...mainRoutes(context),
