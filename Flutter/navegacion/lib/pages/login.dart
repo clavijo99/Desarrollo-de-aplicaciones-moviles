@@ -20,17 +20,28 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text('Login'),
-            ButtonCustom(text: 'Registrar', onTap: (){
-               Navigator.of(
-          context,
-        ).push(MaterialPageRoute(builder: (_) => RegisterScreen()));
-            },),
-            ButtonCustom(text: 'Ir al home', onTap: (){
-               Navigator.of(
-          context,
-        ).push(MaterialPageRoute(builder: (_) => LayoutScreen()));
-            },)
-           ],
+            ButtonCustom(
+              text: 'Registrar',
+              onTap: () {
+                //        Navigator.of(
+                //   context,
+                // ).push(MaterialPageRoute(builder: (_) => RegisterScreen()));
+                Navigator.of(context).pushNamed('/register-screen');
+              },
+            ),
+            ButtonCustom(
+              text: 'Ir al home',
+              onTap: () {
+                //        Navigator.of(
+                //   context,
+                // ).push(MaterialPageRoute(builder: (_) => LayoutScreen()));
+
+                Navigator.of(
+                  context,
+                ).pushNamed('/layout-screen', arguments: "Hola desde el login");
+              },
+            ),
+          ],
         ),
       ),
     );

@@ -9,12 +9,17 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
-@override
+  @override
   void initState() {
-    Future.delayed( Duration( seconds: 3 ) , () {
-      Navigator.of(context).pushReplacement( MaterialPageRoute(builder: (_) => LoginScreen() ) );
-    } );
+    // Future.delayed( Duration( seconds: 3 ) , () {
+    //   Navigator.of(context).pushReplacement( MaterialPageRoute(builder: (_) => LoginScreen() ) );
+    // } );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.delayed(const Duration(milliseconds: 1500), () {
+        Navigator.of(context).pushReplacementNamed('/login-screen');
+      });
+    });
     super.initState();
   }
 
@@ -45,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       style: TextStyle(color: Colors.white, fontSize: 30),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 20),
                   CircularProgressIndicator(),
                 ],
               ),
