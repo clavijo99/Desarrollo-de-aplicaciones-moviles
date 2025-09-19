@@ -1,0 +1,49 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+    
+      
+      {
+        "name": "Flutter (FVM - Local)",
+        "type": "dart",
+        "request": "launch",
+        "program": "lib/main.dart",
+        "flutterMode": "debug",
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "FLUTTER_ROOT": "${workspaceFolder}/.fvm/versions/3.32.8"
+        },
+        "args": [
+          "--dart-define=ENVIRONMENT=local"
+        ]
+      },
+      {
+        "name": "Flutter (FVM - Dev)",
+        "type": "dart",
+        "request": "launch",
+        "program": "lib/main.dart",
+        "flutterMode": "debug",
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "FLUTTER_ROOT": "${workspaceFolder}/.fvm/versions/3.32.8"
+        },
+        "args": [
+          "--dart-define=ENVIRONMENT=dev"
+        ]
+      },
+      {
+        "name": "Flutter (FVM - Prod)",
+        "type": "dart",
+        "request": "launch",
+        "program": "lib/main.dart",
+        "flutterMode": "release",
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "FLUTTER_ROOT": "${workspaceFolder}/.fvm/versions/3.32.8"
+        },
+        "args": [
+          "--dart-define=ENVIRONMENT=prod"
+        ]
+      }
+    ]
+  }
