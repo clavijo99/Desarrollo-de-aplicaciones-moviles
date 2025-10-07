@@ -24,4 +24,26 @@ class PostService {
       return null;
     }
   }
+
+  Future createPost(PostModel post) async {
+    try {
+      final response = await _dio.post(
+        '/posts',
+        data: post.toJson(),
+        options: Options(headers: {'User-Agent': 'FlutterApp/1.0'}),
+      );
+
+      if (response.statusCode == 201){
+        print('Post creado: ${response.data}');
+        //return PostModel.fromJson(response.data);
+      } else {
+        print('Error en la peticion');
+        return null;
+      }
+
+    } on DioException catch (error) {
+      print('el error es: $error');
+      return null;
+    }
+  }
 }
