@@ -1,4 +1,5 @@
 import 'package:consumo_apis/blocs/home_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -65,6 +66,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 : Center(child: CircularProgressIndicator()),
           ),
+          CupertinoButton(child: Text('Crear post'), onPressed: (){
+            bloc.createPost();
+          })
         ],
       ),
     );
