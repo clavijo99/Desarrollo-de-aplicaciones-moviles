@@ -19,7 +19,12 @@ class HomeProvider with ChangeNotifier {
 
 
   Future<void> createPost() async{
-    await _postService.createPost(PostModel(userId: 1, title: "new post", body: "lorem ipsum"));
+    final response = await _postService.createPost(PostModel(userId: 1, title: "new post", body: "lorem ipsum"));
+
+    if(response != null){
+      posts?.insert(0, response);
+      notifyListeners();
+    }
   }
 
 }

@@ -25,7 +25,7 @@ class PostService {
     }
   }
 
-  Future createPost(PostModel post) async {
+  Future<PostModel?> createPost(PostModel post) async {
     try {
       final response = await _dio.post(
         '/posts',
@@ -35,7 +35,7 @@ class PostService {
 
       if (response.statusCode == 201){
         print('Post creado: ${response.data}');
-        //return PostModel.fromJson(response.data);
+        return PostModel.fromJson(response.data);
       } else {
         print('Error en la peticion');
         return null;
