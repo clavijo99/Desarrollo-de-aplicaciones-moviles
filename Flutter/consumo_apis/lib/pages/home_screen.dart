@@ -1,4 +1,5 @@
 import 'package:consumo_apis/blocs/home_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -52,9 +53,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: double.infinity,
                                   padding: EdgeInsets.symmetric(vertical: 20),
                                   decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(10))),
-                                  child: Text(bloc.posts![index]['title'], style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                                  child: Text(bloc.posts![index].title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                                 ),
-                                Expanded(child: Text(bloc.posts![index]['body'])),
+                                Expanded(child: Text(bloc.posts![index].body)),
                               ],
                             ),
                           ),
@@ -65,6 +66,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 : Center(child: CircularProgressIndicator()),
           ),
+          CupertinoButton(child: Text('Crear post'), onPressed: (){
+            bloc.createPost();
+          })
         ],
       ),
     );
