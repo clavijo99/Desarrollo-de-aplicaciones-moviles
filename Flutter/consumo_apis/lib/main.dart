@@ -1,4 +1,5 @@
-import 'package:consumo_apis/pages/home_screen.dart';
+import 'package:consumo_apis/pages/layout/layout_screen.dart';
+import 'package:consumo_apis/pages/splash/splash_screeen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes : {
-        '/': (_) => HomeScreen.init(context)
+        '/': (_) => SplashScreen(),
+        '/layout': (_) => LayoutScreen()
       }
     );
   }
